@@ -6,7 +6,7 @@
  * @argv: Arguments vector which is an array of pointers
  * Return: return (0) success
  */
-int main(int __attribute__((__unused__)) argc, char* argv[])
+int main(int argc __attribute__((__unused__)), char* argv[])
 {
 printf("%s\n", *argv);
 return (0);
