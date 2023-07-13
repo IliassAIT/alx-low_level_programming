@@ -1,8 +1,10 @@
 #include "main.h"
 #include <stdlib.h>
 /**
- * main - Entry point
- * Return: return (0) success
+ * _calloc - func that allocate and initialize mem to 0
+ * @nmemb: number of elements
+ * @size: size of each element
+ * Return: return (ptr) to the allocated mem or NULL
  */
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
@@ -16,7 +18,7 @@ if (!cont)
 	free(cont);
 	return (NULL);
 }
-for (i = 0; i < nmemb *size; i++)
-	*((char *)cont + i) = 0;
+for (i = 0; i < nmemb * size; i++)
+	*((char *) cont + i) = 0;
 return (cont);
 }
