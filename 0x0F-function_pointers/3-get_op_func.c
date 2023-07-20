@@ -18,9 +18,9 @@ int flag;
 flag = 0;
 while (flag < 5)
 {
-	if (strcmp(s, ops[i].op) == 0)
-		return (ops[i].f);
-	i++;
+	if (strcmp(s, ops[flag].op) == 0)
+		return (ops[flag].f);
+	flag++;
 	}
 return (NULL);
 }
