@@ -6,7 +6,7 @@
  */
 int _length(const char *s)
 {
-size_t length;
+int length = 0;
 while (s[length])
 {
 	length++;
