@@ -1,5 +1,5 @@
 #include "lists.h"
-int _length(char *s);
+int _length(const char *s);
 /**
  * add_node - function that creates and add a new node to the linked list
  * @head: A double pointer to the linked list.
@@ -11,12 +11,12 @@ list_t *add_node(list_t **head, const char *str)
 {
 list_t *new_node;
 size_t length = _length(str);
-new = malloc(sizeof(list_t));
+new_node = malloc(sizeof(list_t));
 if (!new_node)
 	return (NULL);
-new->str = strdup(str);
-new->len = length;
-new->next = (*head);
+new_node->str = strdup(str);
+new_node->len = length;
+new_node->next = (*head);
 (*head) = new_node;
 return (*head);
 }
@@ -25,12 +25,15 @@ return (*head);
  * @s: pointer to the string to be calculated
  * Return: length of the string
  */
-int _length(char *s)
+int _length(const char *s)
 {
-size_t length;
+int length = 0;
+if (s)
+{
 while (s[length])
 {
 	length++;
+}
 }
 return (length);
 }

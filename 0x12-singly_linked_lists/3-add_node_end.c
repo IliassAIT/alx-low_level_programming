@@ -4,7 +4,7 @@
  * @s: pointer to the string to be calculated
  * Return: length of the string
  */
-int _length(char *s)
+int _length(const char *s)
 {
 size_t length;
 while (s[length])
