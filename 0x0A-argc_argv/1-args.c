@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include "main.h"
 /**
- * main - Function that prints the number of used arguments
- * @argc: Argument count.
- * @argv: Argument vector.
- * Return: return (0) success.
+ * main - Entry point
+ * @argc: argument count.
+ * @argv: argument vector.
+ * Return: return (0) success
  */
-int main(int argc, char *argv[] __attribute__((__unused__)))
+int main(int argc, char __attribute__((__unused__)) *argv[])
 {
-printf("%d\n", argc - 1);
+argc--;
+printf("%d\n", argc);
 return (0);
 }

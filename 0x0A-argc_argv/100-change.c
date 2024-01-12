@@ -1,36 +1,26 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * main - func that gives you the minimum change return
+ * main - Entry point
  * @argc: argument count.
  * @argv: argument vector.
- * Return: return (0) success or (1) if failure.
+ * Return: return (0) success.
  */
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
-int number = 0, coin, retcoin = 0, i = 0;
-int change[] = {25, 10, 5, 2, 1};
-if (argc != 2)
+int cent_types[] = {1, 2, 5, 10, 25};
+int cash = atoi(argv[1]);
+int i = 4, count = 0;
+while (i > 0)
 {
-printf("Error\n");
-return (1);
+if (cash < cent_types[i])
+	i--;
+count += cash / cent_types[i];
+cash = cash % cent_types[i];
+i--;
 }
-coin = atoi(argv[1]);
-while (i < 5)
-{
-number = 0;
-if (coin == 0)
-{
-break;
-}
-else if (change[i] <= coin)
-{
-number = coin / change[i];
-coin -= number *change[i];
-retcoin += number;
-}
-i++;
-}
-printf("%d\n", retcoin);
+if (cash == 1)
+	count++;
+printf("%d\n", count);
 return (0);
 }

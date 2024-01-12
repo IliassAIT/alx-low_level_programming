@@ -1,13 +1,13 @@
 #include <stdio.h>
-#include "main.h"
 /**
- * main - Func that prints the prog name
- * @argc: Arguments count
- * @argv: Arguments vector which is an array of pointers
+ * main - Entry point
+ * @argc: argument count.
+ * @argv: argument vector.
  * Return: return (0) success
  */
-int main(int argc __attribute__((__unused__)), char *argv[])
+int main(int argc, char *argv[])
 {
-printf("%s\n", *argv);
+argc--;
+printf("%s\n", argv[argc]);
 return (0);
 }
