@@ -1,28 +1,30 @@
 #include "main.h"
 /**
- * sqrt_supp - function that include a second parameter to check main func
- * @a: int to be checked
- * @b: supportive integer
- * Return: same as the main func.
+ * supp_sqrt - function that returns the natural square of an int by recursion
+ * @a: number to be squared.
+ * @b: the natural square root
+ * Return: (-1) if no square root found of the sr
  */
-int sqrt_supp(int a, int b)
+int supp_sqrt(int a, int b)
 {
-if (b * b < a)
-	return (sqrt_supp(a, b + 1));
-else if (b * b == a)
+if (b * b == a)
 	return (b);
+if (b * b != a && b <= a / b)
+	return (supp_sqrt(a, b + 2));
 else
 	return (-1);
 }
 /**
- * _sqrt_recursion - checks if an integer admits a natural sq root
- * @n: int to be checked
- * Return: return (-1) if n has no natural sq root or the square root.
- */
+* _sqrt_recursion - function that returns the ns of an int by recursion
+* @n: number to be squared.
+* Return: (-1) if no square root found of the sr
+*/
 int _sqrt_recursion(int n)
 {
 if (n < 0)
 	return (-1);
+if (n % 2 == 0)
+	return (supp_sqrt(n, 2));
 else
-	return (sqrt_supp(n, 0));
+	return (supp_sqrt(n, 1));
 }

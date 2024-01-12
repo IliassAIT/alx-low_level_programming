@@ -1,32 +1,28 @@
 #include "main.h"
 /**
- * prime_supp - function that adds a second parameter to support the main func
- * @a: int to be checked.
- * @b: supp parameter.
- * Return: same as is_prime_number.
+ * supp_prime - function that checks if an int has a prime
+ * @a: number to be checked
+ * @b: checker
+ * Return: return (1) if a is prime and (0) if not
  */
-int prime_supp(int a, int b)
+int supp_prime(int a, int b)
 {
+if (a % b != 0 && b > a / b)
+	return (1);
 if (a % b == 0)
 	return (0);
-else if ((b < (a / b)) && (a % b) != 0)
-	return (prime_supp(a, b + 2));
 else
-	return (1);
+	return (supp_prime(a, b + 2));
 }
 /**
- * is_prime_number - func that checks if a num is prime
- * @n: int to be checked.
- * Return: return (0) in not prime or (1) if prime.
+ * is_prime_number - function that checks if an int has a prime
+ * @n: number to be checked
+ * Return: return (1) if a is prime and (0) if not
  */
 int is_prime_number(int n)
 {
-if (n <= 1)
-	return (0);
-else if (n == 2)
-	return (1);
-else if ((n != 2) && (n % 2 == 0))
+if (n <= 1 || n % 2 == 0)
 	return (0);
 else
-	return (prime_supp(n, 3));
+	return (supp_prime(n, 3));
 }

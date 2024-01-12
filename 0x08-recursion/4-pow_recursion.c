@@ -1,9 +1,9 @@
 #include "main.h"
 /**
- * _pow_recursion - function that calculates x to the power y
- * @x: integer to be powered.
- * @y: the power to be applied to x.
- * Return: return (-1) if y is negative or x to the power of y.
+ * _pow_recursion - function raise an int to the power of another
+ * @x: first paramter int the be raised.
+ * @y: second function parameter the power.
+ * Return: return (-1) if the power is negative or x to the power of y.
  */
 int _pow_recursion(int x, int y)
 {
@@ -12,5 +12,5 @@ if (y < 0)
 else if (y == 0)
 	return (1);
 else
-	return (x * _pow_recursion(x, y - 1));
+	return (_pow_recursion(x, y - 1) * x);
 }
