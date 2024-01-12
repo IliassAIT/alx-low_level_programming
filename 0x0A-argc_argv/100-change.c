@@ -9,13 +9,14 @@
 int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 int cent_types[] = {1, 2, 5, 10, 25};
-int cash = atoi(argv[1]);
+int cash;
 int i = 4, count = 0;
 if (argc != 2)
 {
 	printf("Error\n");
 	return (1);
 }
+cash = atoi(argv[1]);
 if (cash < 0)
 	printf("0\n");
 else
