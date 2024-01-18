@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdlib.h>
 /**
  * free_grid - function that frees a grid
  * @grid: 2d array to be freed.
@@ -12,7 +11,7 @@ if (grid != NULL)
 {
 for (h = 0; h <= height; h++)
 {
-	free(grid[h]);
+        free(grid[h]);
 }
 free(grid);
 }

@@ -1,44 +1,47 @@
 #include "main.h"
-#include <stdlib.h>
 /**
- * alloc_grid - func that creates a grid and fill it with 0s
- * @width: the number of columns.
- * @height: the number of rows.
- * Return: return ptr to the grid or null.
+ * alloc_grid - function that creates a 2d array
+ * @width: columns of the array
+ * @height: rows of the array
+ * Return: return (grid) the created array
  */
 int **alloc_grid(int width, int height)
 {
-int **fullgrid;
-int w, h;
-if (width <= 0 || height <= 0)
+int **grid;
+int h, w, k, flag;
+if (width < 1 || height < 1)
+	return (NULL);
+flag = 0;
+grid = malloc(sizeof(int *) * height);
+if (!grid)
 {
-return (NULL);
-}
-fullgrid = malloc(height * sizeof(int *));
-if (fullgrid == NULL)
-{
-	free(fullgrid);
+	free(grid);
 	return (NULL);
 }
 for (h = 0; h < height; h++)
 {
-	fullgrid[h] = malloc(width * sizeof(int));
-	if (fullgrid[h] == NULL)
+	grid[h] = malloc(sizeof(int) * width);
+	if (!(grid[h]))
 	{
-	for (h--; h >= 0; h--)
+		flag = 1;
+		break;
+	}
+}
+if (flag == 1)
+{
+	for (k = h - 1; k >= 0; k--)
 	{
-	free(fullgrid[h]);
+		free(grid[k]);
 	}
-	free(fullgrid);
-	return (NULL);
-	}
+	free(grid);
+return (NULL);
 }
 for (h = 0; h < height; h++)
 {
 	for (w = 0; w < width; w++)
 	{
-		fullgrid[h][w] = 0;
+		grid[h][w] = 0;
 	}
 }
-return (fullgrid);
+return (grid);
 }
