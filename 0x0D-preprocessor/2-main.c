@@ -1,7 +1,7 @@
 #include <stdio.h>
 /**
- * main - print the file name
- * Return: return (0) success
+ * main - function that print the file name using macros
+ * Return: return (0) meaning success.
  */
 int main(void)
 {
