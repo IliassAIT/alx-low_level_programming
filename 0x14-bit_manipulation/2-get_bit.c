@@ -7,15 +7,8 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-unsigned long int i = 0, tester = 0;
 int flag = 0;
-tester = n;
-while (tester > 0)
-{
-tester = tester >> 1;
-i++;
-}
-if (index > i || index > 64)
+if (index > 32)
 	return (-1);
 flag = (n >> index) & 1;
 return (flag);
