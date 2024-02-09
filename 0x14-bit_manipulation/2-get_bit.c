@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 /**
  * get_bit - function that gives the value of the bit localised by an index
  * @n: first parameter.
@@ -12,10 +13,10 @@ int flag = 0;
 tester = n;
 while (tester > 0)
 {
-tester = tester >> i;
+tester = tester >> 1;
 i++;
 }
-if (index > i)
+if (index > i || index > 64)
 	return (-1);
 flag = (n >> index) & 1;
 return (flag);
