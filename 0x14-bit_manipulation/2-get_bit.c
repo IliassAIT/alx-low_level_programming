@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  * get_bit - function that gives the value of the bit localised by an index
  * @n: first parameter.
